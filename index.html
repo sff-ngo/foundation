@@ -6,24 +6,23 @@
     <title>Save Mateo - Urgent Fundraiser</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* [All the CSS styles from the previous compact version remain exactly the same] */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: Arial, sans-serif; 
-            line-height: 1.5; 
-            color: #333; 
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            color: #333;
             background: #f0f8ff;
             padding: 20px;
             max-width: 900px;
             margin: 0 auto;
         }
-        
         .container {
             background: white;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             overflow: hidden;
         }
-        
         .header {
             background: linear-gradient(135deg, #1a6dcc, #4a9ef4);
             color: white;
@@ -31,12 +30,25 @@
             text-align: center;
             position: relative;
         }
-        
-        .header h1 { 
-            font-size: 2rem; 
-            margin-bottom: 10px; 
+        .child-photo-container {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            overflow: hidden;
+            background: #e0e0e0;
         }
-        
+        .child-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
         .urgency-badge {
             background: #ff4757;
             color: white;
@@ -47,17 +59,14 @@
             display: inline-block;
             animation: pulse 2s infinite;
         }
-        
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
-        
         .main-content {
             padding: 25px;
         }
-        
         .doctor-quote {
             background: #f8f9fa;
             padding: 20px;
@@ -66,7 +75,6 @@
             font-style: italic;
             border-radius: 0 8px 8px 0;
         }
-        
         .doctor-signature {
             text-align: right;
             font-weight: bold;
@@ -74,7 +82,6 @@
             margin-top: 10px;
             font-size: 0.95rem;
         }
-        
         .highlight-box {
             background: #fff3cd;
             border: 2px solid #ffc107;
@@ -83,27 +90,23 @@
             text-align: center;
             margin: 25px 0;
         }
-        
         .highlight-box h2 {
             color: #d63031;
             font-size: 1.8rem;
             margin-bottom: 10px;
         }
-        
         .section-title {
             color: #1a6dcc;
             margin: 25px 0 15px 0;
             padding-bottom: 10px;
             border-bottom: 2px solid #eee;
         }
-        
         .donation-options {
             display: flex;
             gap: 15px;
             margin: 20px 0;
             flex-wrap: wrap;
         }
-        
         .donation-option {
             flex: 1;
             min-width: 150px;
@@ -116,19 +119,16 @@
             color: #1a6dcc;
             transition: all 0.3s ease;
         }
-        
         .donation-option:hover {
             background: #1a6dcc;
             color: white;
             transform: translateY(-3px);
         }
-        
         .donation-option i {
             font-size: 2rem;
             display: block;
             margin-bottom: 10px;
         }
-        
         .payment-methods {
             display: flex;
             justify-content: center;
@@ -136,7 +136,6 @@
             margin: 15px 0;
             flex-wrap: wrap;
         }
-        
         .payment-method {
             background: #f8f9fa;
             padding: 10px 15px;
@@ -146,11 +145,9 @@
             align-items: center;
             gap: 8px;
         }
-        
         .crypto-icon {
             color: #f7931a;
         }
-        
         .contact-email {
             background: #e8f5e9;
             padding: 20px;
@@ -159,7 +156,6 @@
             text-align: center;
             border-left: 4px solid #4CAF50;
         }
-        
         .email-address {
             font-size: 1.2rem;
             font-weight: bold;
@@ -169,8 +165,8 @@
             background: white;
             border-radius: 6px;
             display: inline-block;
+            word-break: break-all;
         }
-        
         .verification {
             background: #f8f9fa;
             padding: 20px;
@@ -178,14 +174,12 @@
             margin: 25px 0;
             border-top: 3px solid #4CAF50;
         }
-        
         .footer {
             background: #2c3e50;
             color: white;
             padding: 25px;
             text-align: center;
         }
-        
         .contact-info {
             display: flex;
             justify-content: center;
@@ -193,13 +187,11 @@
             margin: 15px 0;
             flex-wrap: wrap;
         }
-        
         .contact-item {
             display: flex;
             align-items: center;
             gap: 8px;
         }
-        
         .print-btn {
             background: #2c3e50;
             color: white;
@@ -213,12 +205,10 @@
             gap: 8px;
             transition: all 0.3s ease;
         }
-        
-        .print-btn:hover { 
-            background: #1a252f; 
+        .print-btn:hover {
+            background: #1a252f;
             transform: translateY(-2px);
         }
-        
         .progress-bar {
             height: 10px;
             background: #e0e0e0;
@@ -226,21 +216,19 @@
             margin: 15px 0;
             overflow: hidden;
         }
-        
         .progress {
             height: 100%;
             background: linear-gradient(90deg, #4CAF50, #8BC34A);
             width: 35%;
             transition: width 0.5s ease;
         }
-        
         @media (max-width: 600px) {
             body { padding: 10px; }
             .donation-options { flex-direction: column; }
             .contact-info { flex-direction: column; gap: 10px; }
             .payment-methods { flex-direction: column; align-items: center; }
+            .child-photo-container { width: 150px; height: 150px; }
         }
-        
         @media print {
             .print-btn { display: none; }
             body { background: white; padding: 0; }
@@ -250,12 +238,20 @@
 <body>
     <div class="container">
         <div class="header">
+            <!-- IMAGE INSERTED HERE -->
+            <div class="child-photo-container">
+                <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkc0qmswjM-f1DSbITQIZ--uPs5zzI59Hcp4vSR1uMd7Tko-RE1JIYwdORQuQ_nHwepOrqQGeG60q77Rwn8sqEDDIikqY5Zh7yV0k6j2EYEKhdsSigMhgZGUQ1KH0D8suOuYWWyMJstH-bOcdci1LP1rAkFeGHuUOV2vflEn1S-btZqnlkCLgJuC8o9Ylr_Qj2HcPY3JPNnvFjHCi7JrOaOYp4KTPijUSzgezE0=w1280"
+                     alt="Mateo"
+                     class="child-photo"
+                     onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg, #4a9ef4, #1a6dcc);color:white;text-align:center;padding:10px;\'><i class=\'fas fa-heartbeat\' style=\'font-size:2.5rem;margin-bottom:10px;\'></i><span style=\'font-weight:bold;font-size:1.2rem;\'>Mateo</span><small>4 years old</small></div>';">
+            </div>
             <h1>Help Save Mateo</h1>
             <p>4-year-old needs life-saving cancer treatment</p>
             <div class="urgency-badge">TREATMENT NEEDED WITHIN 30 DAYS</div>
         </div>
         
         <div class="main-content">
+            <!-- [All other content remains exactly the same as in the previous compact version] -->
             <div class="doctor-quote">
                 "The targeted immunotherapy we are recommending is his only viable path to remission. Without it, his prognosis becomes dire."
                 <div class="doctor-signature">
@@ -330,11 +326,11 @@
                 <p>All donations go directly to the <strong>Mateo Rivera Medical Trust</strong> for medical expenses only.</p>
                 
                 <p style="margin-top: 15px; font-size: 0.95rem;">
-                    <i class="fas fa-check-circle" style="color: #4CAF50;"></i> 
+                    <i class="fas fa-check-circle" style="color: #4CAF50;"></i>
                     Verified by hospital social workers and Simon Family Foundation
                 </p>
                 <p style="margin-top: 10px; font-size: 0.9rem;">
-                    <i class="fas fa-shield-alt" style="color: #1a6dcc;"></i> 
+                    <i class="fas fa-shield-alt" style="color: #1a6dcc;"></i>
                     All donations are tax-deductible. Receipts provided upon request.
                 </p>
             </div>
@@ -366,6 +362,7 @@
     </div>
 
     <script>
+        // JavaScript remains the same
         document.querySelectorAll('.donation-option').forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -389,7 +386,6 @@
             });
         });
         
-        // Animate progress bar on load
         document.addEventListener('DOMContentLoaded', function() {
             const progress = document.querySelector('.progress');
             setTimeout(() => {
